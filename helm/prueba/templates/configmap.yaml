@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+  namespace: {{ .Values.namespace }}
+data:
+  color: {{ .Values.data.color | default "pink" }}
+  size: {{ .Values.data.size | upper | quote }}
+  size: {{ .Values.data.lenght |  repeat 3 | quote }}
