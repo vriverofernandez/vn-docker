@@ -6,4 +6,4 @@ metadata:
 data:
   color: {{ .Values.data.color | default "pink" }}
   size: {{ .Values.data.size | upper | quote }}
-  size: {{ .Values.data.lenght |  repeat 3 | quote }}
+  {{ if eq .Values.data.lenght "lenght" }} lenght: {{ .Values.data.lenght | quote }} {{ end }}
